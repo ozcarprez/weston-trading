@@ -578,6 +578,140 @@
   .footer-links a { color: var(--gray-400); text-decoration: none; transition: color 0.15s; }
   .footer-links a:hover { color: var(--white); }
 
+
+  /* CATÁLOGO */
+  .cat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 44px;
+  }
+
+  .cat-card {
+    background: var(--gray-900);
+    border: 1px solid var(--gray-800);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.15s;
+  }
+
+  .cat-card:hover { border-color: var(--gray-600); }
+
+  .cat-card-top {
+    padding: 28px 24px 20px;
+    flex: 1;
+  }
+
+  .cat-status {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-family: 'Geist Mono', monospace;
+    margin-bottom: 16px;
+  }
+
+  .cat-status.disponible {
+    background: rgba(34,197,94,0.1);
+    color: var(--green);
+    border: 1px solid rgba(34,197,94,0.2);
+  }
+
+  .cat-status.cerrado {
+    background: var(--gray-800);
+    color: var(--gray-400);
+    border: 1px solid var(--gray-700);
+  }
+
+  .cat-producto {
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--white);
+    margin-bottom: 6px;
+  }
+
+  .cat-ruta {
+    font-size: 0.78rem;
+    color: var(--gray-400);
+    margin-bottom: 20px;
+    font-family: 'Geist Mono', monospace;
+  }
+
+  .cat-specs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 4px;
+  }
+
+  .cat-spec {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.82rem;
+  }
+
+  .cat-spec-label { color: var(--gray-400); }
+
+  .cat-spec-val {
+    color: var(--white);
+    font-weight: 500;
+    font-family: 'Geist Mono', monospace;
+    font-size: 0.82rem;
+  }
+
+  .cat-spec-val.highlight { color: var(--green); }
+
+  .cat-divider {
+    height: 1px;
+    background: var(--gray-800);
+    margin: 0;
+  }
+
+  .cat-card-bottom {
+    padding: 16px 24px;
+  }
+
+  .cat-wa-btn {
+    display: block;
+    width: 100%;
+    background: transparent;
+    border: 1px solid var(--gray-700);
+    color: var(--gray-300);
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.15s;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .cat-wa-btn:hover {
+    background: var(--green);
+    border-color: var(--green);
+    color: var(--black);
+  }
+
+  .cat-note {
+    font-size: 0.75rem;
+    color: var(--gray-400);
+    margin-top: 32px;
+    font-style: italic;
+  }
+
+  @media (max-width: 860px) {
+    .cat-grid { grid-template-columns: 1fr; }
+  }
+
   /* ANIMATIONS */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(16px); }
@@ -609,6 +743,7 @@
     <a href="#roles">Roles</a>
     <a href="#riesgos">Riesgos</a>
     <a href="#oscar">Quién soy</a>
+    <a href="#catalogo">Oportunidades</a>
     <a href="#contacto" class="nav-btn">Co-invertir</a>
   </div>
 </nav>
@@ -782,6 +917,123 @@
       </div>
     </div>
   </div>
+</div>
+
+<!-- CATÁLOGO -->
+<div id="catalogo" class="section">
+  <span class="s-label">Oportunidades Disponibles</span>
+  <h2>Tratos abiertos<br><strong>a co-inversión.</strong></h2>
+
+  <div class="cat-grid">
+
+    <!-- CARD 1 -->
+    <div class="cat-card">
+      <div class="cat-card-top">
+        <span class="cat-status disponible">Disponible</span>
+        <div class="cat-producto">Shishito Peppers</div>
+        <div class="cat-ruta">San Quintín, BC → Los Angeles, CA</div>
+        <div class="cat-specs">
+          <div class="cat-spec">
+            <span class="cat-spec-label">Capital requerido</span>
+            <span class="cat-spec-val">$45,000 USD</span>
+          </div>
+          <div class="cat-spec">
+            <span class="cat-spec-label">Duración estimada</span>
+            <span class="cat-spec-val">18 días</span>
+          </div>
+          <div class="cat-spec">
+            <span class="cat-spec-label">Margen estimado</span>
+            <span class="cat-spec-val highlight">~22%</span>
+          </div>
+          <div class="cat-spec">
+            <span class="cat-spec-label">Tu retorno (50%)</span>
+            <span class="cat-spec-val highlight">~$4,950 USD</span>
+          </div>
+          <div class="cat-spec">
+            <span class="cat-spec-label">Comprador</span>
+            <span class="cat-spec-val">Distribuidor verificado</span>
+          </div>
+        </div>
+      </div>
+      <div class="cat-divider"></div>
+      <div class="cat-card-bottom">
+        <a href="https://wa.me/526631261241?text=Hola%20Oscar%2C%20me%20interesa%20la%20oportunidad%20de%20Shishito%20Peppers.%20%C2%BFPuedes%20darme%20m%C3%A1s%20detalles%3F" target="_blank" class="cat-wa-btn">Preguntar por esta oportunidad →</a>
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="cat-card">
+      <div class="cat-card-top">
+        <span class="cat-status disponible">Disponible</span>
+        <div class="cat-producto">Pepino Persa</div>
+        <div class="cat-ruta">Valle de Mexicali, BC → Phoenix, AZ</div>
+        <div class="cat-specs">
+          <div class="cat-spec">
+            <span class="cat-spec-label">Capital requerido</span>
+            <span class="cat-spec-val">$32,000 USD</span>
+          </div>
+          <div class="cat-spec">
+            <span class="cat-spec-label">Duración estimada</span>
+            <span class="cat-spec-val">22 días</span>
+          </div>
+          <div class="cat-spec">
+            <span class="cat-spec-label">Margen estimado</span>
+            <span class="cat-spec-val highlight">~19%</span>
+          </div>
+          <div class="cat-spec">
+            <span class="cat-spec-label">Tu retorno (50%)</span>
+            <span class="cat-spec-val highlight">~$3,040 USD</span>
+          </div>
+          <div class="cat-spec">
+            <span class="cat-spec-label">Comprador</span>
+            <span class="cat-spec-val">Cadena de supermercados</span>
+          </div>
+        </div>
+      </div>
+      <div class="cat-divider"></div>
+      <div class="cat-card-bottom">
+        <a href="https://wa.me/526631261241?text=Hola%20Oscar%2C%20me%20interesa%20la%20oportunidad%20de%20Pepino%20Persa.%20%C2%BFPuedes%20darme%20m%C3%A1s%20detalles%3F" target="_blank" class="cat-wa-btn">Preguntar por esta oportunidad →</a>
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="cat-card">
+      <div class="cat-card-top">
+        <span class="cat-status disponible">Disponible</span>
+        <div class="cat-producto">Albahaca Fresca</div>
+        <div class="cat-ruta">Ensenada, BC → San Diego, CA</div>
+        <div class="cat-specs">
+          <div class="cat-spec">
+            <span class="cat-spec-label">Capital requerido</span>
+            <span class="cat-spec-val">$18,000 USD</span>
+          </div>
+          <div class="cat-spec">
+            <span class="cat-spec-label">Duración estimada</span>
+            <span class="cat-spec-val">14 días</span>
+          </div>
+          <div class="cat-spec">
+            <span class="cat-spec-label">Margen estimado</span>
+            <span class="cat-spec-val highlight">~25%</span>
+          </div>
+          <div class="cat-spec">
+            <span class="cat-spec-label">Tu retorno (50%)</span>
+            <span class="cat-spec-val highlight">~$2,250 USD</span>
+          </div>
+          <div class="cat-spec">
+            <span class="cat-spec-label">Comprador</span>
+            <span class="cat-spec-val">Distribuidor orgánico</span>
+          </div>
+        </div>
+      </div>
+      <div class="cat-divider"></div>
+      <div class="cat-card-bottom">
+        <a href="https://wa.me/526631261241?text=Hola%20Oscar%2C%20me%20interesa%20la%20oportunidad%20de%20Albahaca%20Fresca.%20%C2%BFPuedes%20darme%20m%C3%A1s%20detalles%3F" target="_blank" class="cat-wa-btn">Preguntar por esta oportunidad →</a>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="cat-note">* Los márgenes son estimados. Los números exactos se comparten por WhatsApp antes de comprometer capital.</p>
 </div>
 
 <!-- CTA FINAL -->
