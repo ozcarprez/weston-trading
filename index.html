@@ -579,6 +579,97 @@
   .footer-links a:hover { color: var(--white); }
 
 
+
+  /* COMPARACIÓN */
+  .compare-section {
+    background: var(--gray-900);
+  }
+
+  .compare-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--gray-800);
+    border: 1px solid var(--gray-800);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 44px;
+  }
+
+  .compare-col {
+    padding: 36px 32px;
+  }
+
+  .compare-col.other { background: var(--gray-900); }
+  .compare-col.weston { background: #0d1f13; }
+
+  .compare-col-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 28px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--gray-800);
+  }
+
+  .compare-col-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  .compare-col.other .compare-col-title { color: var(--gray-400); }
+  .compare-col.weston .compare-col-title { color: var(--green); }
+
+  .compare-col-tag {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-family: 'Geist Mono', monospace;
+  }
+
+  .compare-col.other .compare-col-tag {
+    background: var(--gray-800);
+    color: var(--gray-400);
+    border: 1px solid var(--gray-700);
+  }
+
+  .compare-col.weston .compare-col-tag {
+    background: rgba(34,197,94,0.1);
+    color: var(--green);
+    border: 1px solid rgba(34,197,94,0.2);
+  }
+
+  .compare-items {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .compare-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+
+  .compare-col.other .compare-item { color: var(--gray-400); }
+  .compare-col.weston .compare-item { color: var(--gray-200); }
+
+  .compare-icon {
+    font-size: 0.75rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+
+  .compare-col.other .compare-icon { color: var(--gray-600); }
+  .compare-col.weston .compare-icon { color: var(--green); }
+
+
   /* CATÁLOGO */
   .cat-grid {
     display: grid;
@@ -712,6 +803,73 @@
     .cat-grid { grid-template-columns: 1fr; }
   }
 
+
+  /* NOVEDADES */
+  .news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 44px;
+  }
+
+  .news-card {
+    background: var(--gray-900);
+    border: 1px solid var(--gray-800);
+    border-radius: 10px;
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: border-color 0.15s;
+  }
+
+  .news-card:hover { border-color: var(--gray-600); }
+
+  .news-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--green);
+    font-family: 'Geist Mono', monospace;
+  }
+
+  .news-tag-dot {
+    width: 5px; height: 5px;
+    background: var(--green);
+    border-radius: 50%;
+  }
+
+  .news-title {
+    font-size: 0.97rem;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    color: var(--white);
+    line-height: 1.4;
+  }
+
+  .news-body {
+    font-size: 0.85rem;
+    color: var(--gray-400);
+    line-height: 1.7;
+    flex: 1;
+  }
+
+  .news-date {
+    font-size: 0.72rem;
+    color: var(--gray-400);
+    font-family: 'Geist Mono', monospace;
+    padding-top: 10px;
+    border-top: 1px solid var(--gray-800);
+  }
+
+  @media (max-width: 860px) {
+    .news-grid { grid-template-columns: 1fr; }
+  }
+
   /* ANIMATIONS */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(16px); }
@@ -726,7 +884,7 @@
     .hero-left { padding: 60px 0 40px; border-right: none; border-bottom: 1px solid var(--gray-800); }
     .hero-right { padding: 40px 0 60px; }
     .section, footer { padding-left: 24px; padding-right: 24px; }
-    .modelo-layout, .bio-layout, .cta-section { grid-template-columns: 1fr; gap: 48px; }
+    .modelo-layout, .bio-layout, .cta-section, .compare-grid { grid-template-columns: 1fr; gap: 48px; }
     .roles-grid { grid-template-columns: 1fr; }
     .cta-right { align-items: flex-start; }
     .risk-table td, .risk-table th { padding-left: 0 !important; }
@@ -741,8 +899,7 @@
   <div class="nav-links">
     <a href="#catalogo">Oportunidades</a>
     <a href="#modelo">Modelo</a>
-    <a href="#roles">Roles</a>
-    <a href="#riesgos">Riesgos</a>
+    <a href="#novedades">Novedades</a>
     <a href="#oscar">Quién soy</a>
     <a href="#contacto" class="nav-btn">Co-invertir</a>
   </div>
@@ -757,8 +914,8 @@
         <span class="hero-dot"></span>
         Baja California → EE.UU. · Producto Fresco · Co-inversión
       </div>
-      <h1><strong>El trato ya existe.</strong><br>Solo falta el capital.</h1>
-      <p class="hero-sub">Identifico y opero cada transacción agrícola, de principio a fin. Tú pones el capital. Dividimos el margen neto, 50/50.</p>
+      <h1><strong>Compro hortalizas en Baja California.</strong><br>Las vendo en EE.UU.</h1>
+      <p class="hero-sub">Estoy abriendo este proyecto para que puedas co-invertir conmigo.</p>
       <div class="hero-actions">
         <a href="#contacto" class="btn-white">Quiero co-invertir</a>
         <a href="#modelo" class="btn-ghost">Cómo funciona →</a>
@@ -779,7 +936,7 @@
             <div class="h-stat-label">Duración promedio por ciclo</div>
           </div>
           <div class="h-stat">
-            <span class="h-stat-num">+10</span>
+            <span class="h-stat-num">+13</span>
             <div class="h-stat-label">Años en la cadena agrícola de exportación</div>
           </div>
         </div>
@@ -916,8 +1073,10 @@
 
   <div class="modelo-layout">
     <div class="modelo-body">
-      <p>No es un fondo de inversión. No hay plazos indefinidos ni capital bloqueado. Cada operación es un trato concreto: yo identifico el producto, verifico al comprador y negocio el precio. Antes de que tu capital entre, el negocio ya existe.</p>
-      <p>Opero por ciclos de 15 a 30 días. Cuando el comprador paga, deduzco los gastos operativos comprobables — flete, empaque, logística de cruce — y el margen neto restante se divide en dos partes exactas.</p>
+      <p>No es un fondo de inversión. No hay plazos indefinidos ni capital bloqueado. Cada operación es un trato concreto: verifico la demanda con el comprador, se fija el precio y negocio con el agricultor. Antes de que tu capital entre, el negocio ya existe.</p>
+      <p>Opero por ciclos de 15 a 30 días. Cuando el comprador paga, deduzco los gastos operativos comprobables y el margen neto restante se divide en dos partes exactas.</p>
+      <p>Llevo 13 años en esta industria. Las oportunidades existen, pero el capital define cuántas puedo tomar.</p>
+      <p>Este tipo de operación no existe para el público general. Sin los contactos y el conocimiento del campo, no hay forma de entrar. Yo abro esa puerta.</p>
     </div>
     <div>
       <div class="split-card">
@@ -940,76 +1099,35 @@
   </div>
 </div>
 
-<!-- LOS ROLES -->
-<div id="roles" class="section">
-  <span class="s-label">Los Roles</span>
-  <h2>Cada quién en <strong>su terreno.</strong></h2>
+<!-- NOVEDADES -->
+<div id="novedades" class="section">
+  <span class="s-label">Novedades</span>
+  <h2>Lo que está<br><strong>pasando ahora.</strong></h2>
 
-  <div class="roles-grid">
-    <div class="role-col">
-      <div class="role-col-label">Yo</div>
-      <div class="role-col-name">Oscar Pérez</div>
-      <div class="role-col-sub">Conozco el campo, la cadena y los compradores.</div>
-      <div class="role-items">
-        <div class="role-item"><div class="role-icon">✓</div>Identifico al productor y negocio el precio de compra</div>
-        <div class="role-item"><div class="role-icon">✓</div>Coordino empaque, transporte y cruce de frontera</div>
-        <div class="role-item"><div class="role-icon">✓</div>Gestiono la cobranza y entrego comprobantes de gastos</div>
-        <div class="role-item"><div class="role-icon">✓</div>Manejo todos los riesgos operativos para garantizar cada transacción</div>
-        <div class="role-item"><div class="role-icon">✓</div>Reporto resultados completos al cierre de cada ciclo</div>
-      </div>
+  <div class="news-grid">
+
+    <div class="news-card">
+      <div class="news-tag"><span class="news-tag-dot"></span>Operación activa</div>
+      <div class="news-title">Temporada de pepino persa — demanda fuerte en California</div>
+      <div class="news-body">Los mercados de Los Ángeles y San Diego mantienen precios estables. Operación en curso esta semana con comprador confirmado en California.</div>
+      <div class="news-date">Febrero 2026</div>
     </div>
-    <div class="role-col" style="border-left:1px solid var(--gray-800);">
-      <div class="role-col-label">Co-inversionista</div>
-      <div class="role-col-name">Tú</div>
-      <div class="role-col-sub">Capital disponible y retornos de ciclo corto. Sin operación.</div>
-      <div class="role-items">
-        <div class="role-item"><div class="role-icon">✓</div>Aporta el capital necesario para cerrar el trato</div>
-        <div class="role-item"><div class="role-icon">✓</div>Recibe el detalle completo de la operación antes de decidir</div>
-        <div class="role-item"><div class="role-icon">✓</div>Aprueba o declina cada ciclo de forma individual</div>
-        <div class="role-item"><div class="role-icon">✓</div>Recibe el 50% del margen neto al cierre del ciclo</div>
-        <div class="role-item"><div class="role-icon">✓</div>Sin intervención en la operación diaria</div>
-        <div class="role-item"><div class="role-icon">✓</div>Visibilidad total sobre gastos y resultados</div>
-      </div>
+
+    <div class="news-card">
+      <div class="news-tag"><span class="news-tag-dot"></span>Mercado</div>
+      <div class="news-title">Shishito peppers: precio al alza en mercados del suroeste de EE.UU.</div>
+      <div class="news-body">La demanda de chile shishito en restaurantes y cadenas de supermercados en Arizona y Nevada ha aumentado. Buena ventana para cerrar tratos esta temporada.</div>
+      <div class="news-date">Febrero 2026</div>
     </div>
+
+    <div class="news-card">
+      <div class="news-tag"><span class="news-tag-dot"></span>Cerrada</div>
+      <div class="news-title">Operación de albahaca fresca cerrada — margen del 24%</div>
+      <div class="news-body">Operación completada en 16 días. Productor en Ensenada, comprador orgánico en San Diego. Capital devuelto con retorno al co-inversionista en tiempo y forma.</div>
+      <div class="news-date">Enero 2026</div>
+    </div>
+
   </div>
-</div>
-
-<!-- RIESGOS -->
-<div id="riesgos" class="section">
-  <span class="s-label">Transparencia de Riesgos</span>
-  <h2>Los riesgos existen.<br><strong>Aquí están, claros.</strong></h2>
-
-  <table class="risk-table">
-    <thead>
-      <tr>
-        <th>Riesgo</th>
-        <th>Nivel</th>
-        <th>Mitigación</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="risk-name">El comprador no paga</td>
-        <td><span class="risk-badge badge-med">Medio</span></td>
-        <td>Solo se opera con compradores de historial verificado. Si el comprador incumple, yo absorbo la pérdida — no el co-inversionista.</td>
-      </tr>
-      <tr>
-        <td class="risk-name">Pérdida de producto en tránsito</td>
-        <td><span class="risk-badge badge-med">Medio</span></td>
-        <td>Transportistas con trayectorias probadas. El producto fresco lo gestiono con ventanas de tiempo precisas.</td>
-      </tr>
-      <tr>
-        <td class="risk-name">Retraso en cruce fronterizo</td>
-        <td><span class="risk-badge badge-low">Bajo</span></td>
-        <td>Documentación completa, brokers aduanales de confianza, y márgenes de tiempo contemplados desde la planeación.</td>
-      </tr>
-      <tr>
-        <td class="risk-name">Variación de precio de mercado</td>
-        <td><span class="risk-badge badge-low">Bajo</span></td>
-        <td>El precio de compra y venta se acuerda antes de iniciar. El margen está calculado sobre precio fijo, no spot.</td>
-      </tr>
-    </tbody>
-  </table>
 </div>
 
 <!-- OSCAR PÉREZ -->
@@ -1021,9 +1139,8 @@
       <div class="bio-name">Oscar Pérez</div>
       <div class="bio-title">Operador · Weston Trading · Baja California, México</div>
       <div class="bio-text">
-        <p>Llevo más de 10 años en la industria agrícola de exportación. He operado directamente la compraventa de producto fresco — principalmente hortalizas — entre productores de Baja California y compradores establecidos en el mercado norteamericano.</p>
+        <p>Llevo más de 13 años en la industria agrícola de exportación. He operado directamente la compraventa de producto fresco — principalmente hortalizas — entre productores de Baja California y compradores establecidos en el mercado norteamericano.</p>
         <p>Mi experiencia más reciente fue en una financiera agrícola especializada, donde entendí a fondo cómo fluye el capital en esta industria, qué hace que una operación sea financiable, y qué distingue a los compradores sólidos de los que representan riesgo.</p>
-        <p>No soy intermediario. Identifico tratos reales, los opero de principio a fin y asumo responsabilidad sobre el resultado. Tú entras cuando el trato ya está armado.</p>
       </div>
       <div class="bio-tags">
         <span class="bio-tag">Compraventa Agrícola</span>
@@ -1054,8 +1171,7 @@
   <div class="logo">Weston<span class="logo-dot">.</span>Trading</div>
   <div class="footer-links">
     <a href="#modelo">Modelo</a>
-    <a href="#roles">Roles</a>
-    <a href="#riesgos">Riesgos</a>
+    <a href="#novedades">Novedades</a>
     <a href="#contacto">Contacto</a>
   </div>
   <div>Baja California, México · 2025</div>
